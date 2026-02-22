@@ -1,63 +1,61 @@
 /**
  * OOPSBannerApp
- * UC2: Render OOPS as Banner using ASCII Art
+ * UC3: Render OOPS Banner using String.join()
  *
  * @author Nagulavel
- * @version 2.0
+ * @version 3.0
  */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        String O1, O2, P, S;
-
         // Line 1
-        O1 = "  *****  ";
-        O2 = "  *****  ";
-        P  = " ******  ";
-        S  = " *****   ";
-        System.out.println(O1 + " " + O2 + " " + P + " " + S);
+        System.out.println(String.join(" ",
+                "  *****  ",
+                "  *****  ",
+                " ******  ",
+                " *****   "));
 
         // Line 2
-        O1 = " *     * ";
-        O2 = " *     * ";
-        P  = " *     * ";
-        S  = " *       ";
-        System.out.println(O1 + " " + O2 + " " + P + " " + S);
+        System.out.println(String.join(" ",
+                " *     * ",
+                " *     * ",
+                " *     * ",
+                " *       "));
 
         // Line 3
-        O1 = " *     * ";
-        O2 = " *     * ";
-        P  = " *     * ";
-        S  = " *       ";
-        System.out.println(O1 + " " + O2 + " " + P + " " + S);
+        System.out.println(String.join(" ",
+                " *     * ",
+                " *     * ",
+                " *     * ",
+                " *       "));
 
         // Line 4
-        O1 = " *     * ";
-        O2 = " *     * ";
-        P  = " ******  ";
-        S  = "  *****  ";
-        System.out.println(O1 + " " + O2 + " " + P + " " + S);
+        System.out.println(String.join(" ",
+                " *     * ",
+                " *     * ",
+                " ******  ",
+                "  *****  "));
 
         // Line 5
-        O1 = " *     * ";
-        O2 = " *     * ";
-        P  = " *       ";
-        S  = "       * ";
-        System.out.println(O1 + " " + O2 + " " + P + " " + S);
+        System.out.println(String.join(" ",
+                " *     * ",
+                " *     * ",
+                " *       ",
+                "       * "));
 
         // Line 6
-        O1 = " *     * ";
-        O2 = " *     * ";
-        P  = " *       ";
-        S  = "       * ";
-        System.out.println(O1 + " " + O2 + " " + P + " " + S);
+        System.out.println(String.join(" ",
+                " *     * ",
+                " *     * ",
+                " *       ",
+                "       * "));
 
         // Line 7
-        O1 = "  *****  ";
-        O2 = "  *****  ";
-        P  = " *       ";
-        S  = " *****   ";
-        System.out.println(O1 + " " + O2 + " " + P + " " + S);
+        System.out.println(String.join(" ",
+                "  *****  ",
+                "  *****  ",
+                " *       ",
+                " *****   "));
     }
 }
