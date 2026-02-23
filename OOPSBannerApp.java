@@ -17,28 +17,15 @@ public class OOPSBannerApp {
         private char character;
         private String[] pattern;
 
-        /**
-         * Constructor
-         * @param character letter
-         * @param pattern 7-line banner pattern
-         */
         public CharacterPattern(char character, String[] pattern) {
             this.character = character;
             this.pattern = pattern;
         }
 
-        /**
-         * Getter for character
-         * @return character
-         */
         public char getCharacter() {
             return character;
         }
 
-        /**
-         * Getter for pattern
-         * @return pattern array
-         */
         public String[] getPattern() {
             return pattern;
         }
@@ -46,8 +33,6 @@ public class OOPSBannerApp {
 
     /**
      * Utility Method to Build Banner Line by Line
-     * @param characters array of CharacterPattern objects
-     * @return assembled banner lines
      */
     public static String[] buildBanner(CharacterPattern[] characters) {
 
@@ -67,12 +52,8 @@ public class OOPSBannerApp {
         return banner;
     }
 
-    /**
-     * Main Method
-     */
     public static void main(String[] args) {
 
-        // Define patterns
         CharacterPattern O = new CharacterPattern('O', new String[] {
             "  *****  ",
             " *     * ",
@@ -103,13 +84,10 @@ public class OOPSBannerApp {
             " *****   "
         });
 
-        // Create array of objects
         CharacterPattern[] word = { O, O, P, S };
 
-        // Build banner
         String[] banner = buildBanner(word);
 
-        // Print banner
         for (String line : banner) {
             System.out.println(line);
         }
