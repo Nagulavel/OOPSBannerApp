@@ -1,32 +1,60 @@
 /**
  * OOPSBannerApp
- * UC6: Refactor Banner Logic into Functions
+ * UC7: Store Character Pattern in a Class
+ *
+ * Demonstrates Encapsulation, Modularity, and OOP Design
  *
  * @author Nagulavel
- * @version 6.0
+ * @version 7.0
  */
 public class OOPSBannerApp {
 
-    public static void main(String[] args) {
+    /**
+     * Inner Static Class to store Character and its Pattern
+     */
+    public static class CharacterPattern {
 
-        String[] O = getOPattern();
-        String[] P = getPPattern();
-        String[] S = getSPattern();
+        private char character;
+        private String[] pattern;
+
+        public CharacterPattern(char character, String[] pattern) {
+            this.character = character;
+            this.pattern = pattern;
+        }
+
+        public char getCharacter() {
+            return character;
+        }
+
+        public String[] getPattern() {
+            return pattern;
+        }
+    }
+
+    /**
+     * Utility Method to Build Banner Line by Line
+     */
+    public static String[] buildBanner(CharacterPattern[] characters) {
 
         String[] banner = new String[7];
 
         for (int i = 0; i < 7; i++) {
-            banner[i] = String.join(" ", O[i], O[i], P[i], S[i]);
+
+            StringBuilder line = new StringBuilder();
+
+            for (CharacterPattern cp : characters) {
+                line.append(cp.getPattern()[i]).append(" ");
+            }
+
+            banner[i] = line.toString();
         }
 
-        for (String line : banner) {
-            System.out.println(line);
-        }
+        return banner;
     }
 
-    // Method for O pattern
-    public static String[] getOPattern() {
-        return new String[] {
+    public static void main(String[] args) {
+
+        CharacterPattern O = new CharacterPattern('O', new String[] {
             "  *****  ",
             " *     * ",
             " *     * ",
@@ -34,12 +62,9 @@ public class OOPSBannerApp {
             " *     * ",
             " *     * ",
             "  *****  "
-        };
-    }
+        });
 
-    // Method for P pattern
-    public static String[] getPPattern() {
-        return new String[] {
+        CharacterPattern P = new CharacterPattern('P', new String[] {
             " ******  ",
             " *     * ",
             " *     * ",
@@ -47,12 +72,9 @@ public class OOPSBannerApp {
             " *       ",
             " *       ",
             " *       "
-        };
-    }
+        });
 
-    // Method for S pattern
-    public static String[] getSPattern() {
-        return new String[] {
+        CharacterPattern S = new CharacterPattern('S', new String[] {
             " *****   ",
             " *       ",
             " *       ",
@@ -60,6 +82,14 @@ public class OOPSBannerApp {
             "       * ",
             "       * ",
             " *****   "
-        };
+        });
+
+        CharacterPattern[] word = { O, O, P, S };
+
+        String[] banner = buildBanner(word);
+
+        for (String line : banner) {
+            System.out.println(line);
+        }
     }
 }
